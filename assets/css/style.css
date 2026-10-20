@@ -1,0 +1,27 @@
+/* assets/css/style.css — Poultry Haven custom styles */
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+
+.card-hover { transition: transform .2s ease, box-shadow .2s ease; }
+.card-hover:hover { transform: translateY(-4px); box-shadow: 0 12px 24px rgba(0,0,0,.12); }
+.img-zoom { overflow: hidden; }
+.img-zoom img { transition: transform .4s ease; }
+.img-zoom:hover img { transform: scale(1.08); }
+.fade-in { animation: fadeIn .6s ease both; }
+@keyframes fadeIn { from { opacity:0; transform: translateY(8px);} to { opacity:1; transform: translateY(0);} }
+
+/* Admin drawer: hidden off-canvas on phones, static sidebar from md up */
+.admin-drawer { will-change: transform; }
+@media (max-width: 767px) {
+  .admin-drawer { box-shadow: 0 0 40px rgba(0,0,0,.35); }
+}
+@media (min-width: 768px) {
+  .admin-drawer { transform: none !important; }
+}
+
+/* Keep long words (breed names, emails) from overflowing narrow cards */
+.card-hover h3, .card-hover h2 { overflow-wrap: break-word; }
+
+/* Subtle scrollbar for the admin navigation column */
+.admin-drawer nav::-webkit-scrollbar { width: 6px; }
+.admin-drawer nav::-webkit-scrollbar-thumb { background: rgba(255,255,255,.25); border-radius: 3px; }

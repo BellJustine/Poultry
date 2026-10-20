@@ -1,0 +1,10 @@
+# ---------------------------------------------------------------------
+#  Poultry Haven — uploads folder hardening
+#  Uploaded pictures must never be executed as code, even if a file
+#  with a misleading extension ever ends up in this directory.
+# ---------------------------------------------------------------------
+Options -ExecCGI
+
+<FilesMatch "\.(?i:php|php[0-9]|phtml|phps|pht|phar|cgi|pl|py|sh|htaccess)$">
+    Require all denied
+</FilesMatch>
